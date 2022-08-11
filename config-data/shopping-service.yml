@@ -43,7 +43,7 @@ eureka:
       
 resilience4j.circuitbreaker:
   instances:
-    customerFindByIdCB:
+    customerServiceCB:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3
@@ -52,7 +52,7 @@ resilience4j.circuitbreaker:
       waitDurationInOpenState: 5s
       failureRateThreshold: 50
       eventConsumerBufferSize: 10
-    productFindByIdCB:
+    productServiceCB:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3
@@ -61,13 +61,3 @@ resilience4j.circuitbreaker:
       waitDurationInOpenState: 5s
       failureRateThreshold: 50
       eventConsumerBufferSize: 10
-    productUpdateStockCB:
-      registerHealthIndicator: true
-      slidingWindowSize: 10
-      permittedNumberOfCallsInHalfOpenState: 3
-      slidingWindowType: TIME_BASED
-      minimumNumberOfCalls: 20
-      waitDurationInOpenState: 5s
-      failureRateThreshold: 50
-      eventConsumerBufferSize: 10
-
